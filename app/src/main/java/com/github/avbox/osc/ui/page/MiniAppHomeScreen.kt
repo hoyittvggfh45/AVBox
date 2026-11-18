@@ -36,7 +36,6 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilledButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.ListItem
@@ -584,15 +583,11 @@ private fun MiniAppMarketTab(
                 }
             }
         }
-        PullToRefreshDefaults.IndicatorBox(
+        HomePullRefreshIndicator(
             state = pullState,
             isRefreshing = refreshing,
-            modifier = Modifier
-                .align(Alignment.TopCenter)
-                .size(48.dp),
-            shape = RectangleShape,
-            containerColor = Color.Transparent,
-            elevation = 0.dp
+            topPadding = 0.dp,
+            modifier = Modifier.align(Alignment.TopCenter)
         )
     }
 }
@@ -745,7 +740,7 @@ private fun MiniAppEmptyState(
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
             Spacer(modifier = Modifier.height(16.dp))
-            FilledButton(onClick = onAction) {
+            Button(onClick = onAction) {
                 Text(actionLabel)
             }
         }

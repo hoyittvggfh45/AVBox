@@ -35,7 +35,7 @@ class MiniAppSniffActivity : BaseActivity() {
     private var finished = false
     private var deadlineMs: Long = 0L
 
-    private val pollTask = object : Runnable {
+    private val pollTask: Runnable = object : Runnable {
         override fun run() {
             if (finished) return
             if (System.currentTimeMillis() >= deadlineMs) {

@@ -184,7 +184,7 @@ object HaikuoCodec {
 
     fun parseJsonText(text: String, origin: String = ""): List<HaikuoProgram> {
         val cleaned = stripBom(text.trim())
-        val decoded: Any?
+        var decoded: Any?
         try {
             decoded = HaikuoJson.parseOrThrow(cleaned)
         } catch (e: Exception) {

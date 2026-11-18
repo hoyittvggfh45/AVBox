@@ -1413,7 +1413,7 @@ class HaikuoRunnerActivity : BaseActivity(), HaikuoBridgeHandler, HaikuoDialogHa
                     }
                 }
                 "toast" -> showToast(argAt(0)?.toString() ?: "")
-                else -> AppLog.e("HaikuoRunner", "HaikuoX5Bridge: unknown method: $method")
+                else -> AppLog.e("HaikuoRunner", "HaikuoX5Bridge: unknown method: $method", null)
             }
         } catch (e: Exception) {
             AppLog.e("HaikuoRunner", e)

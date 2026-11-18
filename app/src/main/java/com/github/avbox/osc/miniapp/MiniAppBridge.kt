@@ -324,7 +324,7 @@ class MiniAppBridge(
         try {
             return run()
         } catch (failure: MiniAppSourceFailure) {
-            throw MiniAppApiException(failure.code, failure.message)
+            throw MiniAppApiException(failure.code, failure.message ?: failure.code)
         } catch (error: Exception) {
             throw MiniAppApiException("SOURCE_FAILED", "采集源调用失败：$error")
         }

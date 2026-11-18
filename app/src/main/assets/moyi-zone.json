@@ -1,0 +1,1 @@
+{"artifacts":{},"author":"XiaochangXu","capabilities":[],"desc":"TVBox 手机版播放器框架（接手维护版），默认不内置任何片源，源由用户自行配置。","format":2,"id":"avbox.app","installMode":"apk","minShellBuild":0,"name":"AVBox","pkg":"com.github.avbox.osc","platforms":["android"],"provides":[{"id":"avbox.app","kind":"zone-library"}],"sites":"sites.json","version":"1.3.0","versionCode":34,"zone":"library"}

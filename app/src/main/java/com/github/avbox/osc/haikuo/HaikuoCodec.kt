@@ -313,8 +313,8 @@ object HaikuoCodec {
             return "https://pasteme.tyrantg.com/api/getContent/$code"
         }
         throw HaikuoFormatException(
-        "云剪贴板$cloud 的取回地址未公开（官方导入器闭源），暂不能直接解析；" +
-
+            "云剪贴板$cloud 的取回地址未公开（官方导入器闭源），暂不能直接解析；" +
+            "请用 JSON 文件、明文口令或云剪贴板 6 的链接导入"
         )
     }
 
@@ -331,8 +331,8 @@ object HaikuoCodec {
         if (HaikuoJson.num(decoded["return_code"])?.toInt()!= 0) {
             if (HaikuoJson.num(decoded["return_code"])?.toInt() == 4001) {
                 throw HaikuoFormatException(
-                "云剪贴板 6 密码不对：这条分享带密码，取回时须带上 @密码，" +
-
+                    "云剪贴板 6 密码不对：这条分享带密码，取回时须带上 @密码，" +
+                    "请确认分享文本完整复制（含 @ 后面那段）"
                 )
             }
             throw HaikuoFormatException("云剪贴板没找到这条内容，可能已过期或被删除")
